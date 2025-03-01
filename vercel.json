@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["fra1"],
+  "env": {
+    "CLICK_SECRET_KEY": "neLytpXHtYZ",
+    "CLICK_SERVICE_ID": "68027",
+    "CLICK_MERCHANT_ID": "36344",
+    "CLICK_MERCHANT_USER_ID": "52608",
+    "CLICK_SPIC_CODE": "12345678901234567",
+    "CLICK_PACKAGE_CODE": "PC001",
+    "TELEGRAM_BOT_TOKEN": "7553458611:AAFeqiYxdyzvD_lJy4adf8W-dK5lCRnIG9s",
+    "TELEGRAM_CHAT_ID": "5283151626"
+  }
+} 

@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-padding-top: 100px;
+  user-select: none;
+  background: #22C55E;
+}
+
+
+.swiper-pagination-bullet-active {
+    background-color: #000 !important;
+    width: 14px !important;
+    height: 14px !important;
+}
