@@ -23,7 +23,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/yourusername/faxrtravel.git
+git clone https://github.com/Mansurxan1/FaxrTravel.git
 cd faxrtravel
 ```
 
@@ -88,6 +88,45 @@ vercel
 ```bash
 vercel --prod
 ```
+
+### Возможные проблемы при деплое
+
+#### Ошибка с useSearchParams()
+
+Если вы получаете ошибку вида:
+```
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/payment/success"
+```
+
+Убедитесь, что все компоненты, использующие хук `useSearchParams()`, обернуты в компонент `Suspense`. Например:
+
+```jsx
+import { Suspense } from 'react';
+
+// Компонент с fallback для Suspense
+const Loading = () => <div>Загрузка...</div>;
+
+// Компонент, использующий useSearchParams
+const ComponentWithSearchParams = () => {
+  const searchParams = useSearchParams();
+  // ...
+};
+
+// Основной компонент страницы
+const Page = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ComponentWithSearchParams />
+    </Suspense>
+  );
+};
+```
+
+#### Проблемы с Vercel KV Storage
+
+Если у вас возникают проблемы с доступом к Vercel KV Storage, убедитесь, что:
+1. Вы добавили все необходимые переменные окружения (KV_URL, KV_REST_API_URL, KV_REST_API_TOKEN, KV_REST_API_READ_ONLY_TOKEN)
+2. Вы создали KV базу данных в том же проекте Vercel, где размещено приложение
 
 ## Тестирование Click Payment
 

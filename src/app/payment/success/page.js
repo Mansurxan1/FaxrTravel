@@ -1,10 +1,25 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
-const PaymentSuccessPage = () => {
+// Компонент загрузки для Suspense
+const Loading = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 via-white to-green-50 p-6">
+    <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+      <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 className="text-3xl font-bold text-gray-800 mb-4">Загрузка...</h2>
+    </div>
+  </div>
+);
+
+// Основной компонент с использованием useSearchParams
+const SuccessContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { t } = useTranslation();
@@ -65,6 +80,15 @@ const PaymentSuccessPage = () => {
         </button>
       </div>
     </div>
+  );
+};
+
+// Основной компонент страницы с Suspense
+const PaymentSuccessPage = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SuccessContent />
+    </Suspense>
   );
 };
 
