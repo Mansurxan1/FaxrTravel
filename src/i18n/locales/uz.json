@@ -100,7 +100,7 @@
   },
   "processing": "Jarayonda...",
   "payment_success": "To'lov muvaffaqiyatli yakunlandi!",
-  "payment_success_message": "Sizning to'lovingiz muvaffaqiyatli amalga oshirildi. Xarid uchun rahmat! Siz ko'rsatilgan emailga tasdiqlash xabarini olasiz.",
+  "payment_success_message": "Sizning to'lovingiz muvaffaqiyatli amalga oshirildi. Xarid uchun rahmat! Siz ko'rsatilgan telegram yoki telefon raqamingizga tasdiqlash xabarini olasiz.",
   "back_to_home": "Bosh sahifaga qaytish",
   "not_found": "Ma'lumot topilmadi"
 }

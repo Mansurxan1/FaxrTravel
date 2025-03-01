@@ -43,7 +43,7 @@
   "back": "Back",
   "processing": "Processing...",
   "payment_success": "Payment Successful!",
-  "payment_success_message": "Your payment has been successfully processed. Thank you for your purchase! You will receive a confirmation to your email.",
+  "payment_success_message": "Your payment has been successfully processed. Thank you for your purchase! You will receive a confirmation to your telegram account or sms.",
   "back_to_home": "Back to Home",
   "not_found": "Information not found",
   "your_name": "Your Name",
