@@ -17,7 +17,8 @@
 - Tailwind CSS
 - Zustand для управления состоянием
 - Интеграция с Click Payment API
-- Vercel KV Storage для хранения данных
+- Vercel KV Storage для хранения данных (в продакшене)
+- Локальное хранение данных (в разработке)
 
 ## Локальная разработка
 
@@ -47,9 +48,26 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ```
 
-4. Запустите приложение в режиме разработки:
+4. Создайте директорию для хранения данных:
+```bash
+mkdir -p data/orders
+```
+
+5. Запустите приложение в режиме разработки:
 ```bash
 npm run dev
+```
+
+### Локальное хранение данных
+
+При локальной разработке данные о заказах сохраняются в директории `data/orders/` в формате JSON. Каждый заказ сохраняется в отдельном файле с именем `{orderId}.json`.
+
+Структура директории:
+```
+data/
+  └── orders/
+      ├── .gitkeep
+      └── {orderId}.json
 ```
 
 ## Деплой на Vercel
@@ -134,7 +152,7 @@ const Page = () => {
 
 1. Создайте тестовый заказ через API:
 ```bash
-curl -X POST https://your-vercel-app.vercel.app/api/click \
+curl -X POST https://faxrtravel.vercel.app/api/click \
   -H "Content-Type: application/json" \
   -d '{
     "tourId": "test-123",
@@ -147,7 +165,7 @@ curl -X POST https://your-vercel-app.vercel.app/api/click \
 
 2. Используйте полученный `orderId` для тестирования уведомлений:
 ```bash
-curl -X POST https://your-vercel-app.vercel.app/api/click/notify \
+curl -X POST https://faxrtravel.vercel.app/api/click/notify \
   -H "Content-Type: application/json" \
   -d '{
     "click_trans_id": "test-123456",
