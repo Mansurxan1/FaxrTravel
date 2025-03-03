@@ -107,6 +107,13 @@ vercel
 vercel --prod
 ```
 
+### Настройка домена
+
+1. В Vercel Dashboard перейдите в Settings > Domains
+2. Добавьте ваш домен: www.faxr-travel.uz
+3. Следуйте инструкциям для настройки DNS-записей
+4. Дождитесь подтверждения домена
+
 ### Возможные проблемы при деплое
 
 #### Ошибка с useSearchParams()
@@ -152,7 +159,7 @@ const Page = () => {
 
 1. Создайте тестовый заказ через API:
 ```bash
-curl -X POST https://faxrtravel.vercel.app/api/click \
+curl -X POST https://www.faxr-travel.uz/api/click \
   -H "Content-Type: application/json" \
   -d '{
     "tourId": "test-123",
@@ -165,7 +172,7 @@ curl -X POST https://faxrtravel.vercel.app/api/click \
 
 2. Используйте полученный `orderId` для тестирования уведомлений:
 ```bash
-curl -X POST https://faxrtravel.vercel.app/api/click/notify \
+curl -X POST https://www.faxr-travel.uz/api/click/notify \
   -H "Content-Type: application/json" \
   -d '{
     "click_trans_id": "test-123456",

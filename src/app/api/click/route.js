@@ -139,8 +139,8 @@ export async function POST(request) {
     const returnUrl = `/payment/success`;
     
     // Получаем хост из заголовков запроса для формирования абсолютного URL
-    const host = request.headers.get('host') || 'localhost:5174';
-    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const host = request.headers.get('host') || 'www.faxr-travel.uz';
+    const protocol = 'https'; // Всегда используем HTTPS для продакшена
     const absoluteReturnUrl = `${protocol}://${host}${returnUrl}`;
     
     // Сохраняем информацию о заказе
