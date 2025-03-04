@@ -211,6 +211,76 @@ const useHomeStore = create((set) => ({
         ],
       },
     },
+    {
+      id: 4,
+      textUz: "Test, Test",
+      textRu: "Test, Test",
+      textEng: "Test, Test",
+      descUz: "Test va romantika shahri.",
+      descRu: "Test любви и романтики.",
+      descEng: "The city of love and romance.",
+      image:
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/15/6d/d6/paris.jpg?w=1200&h=-1&s=1",
+      price: "1 000",
+      day: "7",
+      visaUz: "Test uchun Shengen vizasi talab qilinadi.",
+      visaRu: "Test Test требуется Шенгенская виза.",
+      visaEng: "A Test visa is required for France.",
+      hotels: [
+        {
+          nameUz: "Ritz Paris",
+          nameRu: "Ритц Париж",
+          nameEng: "Ritz Paris",
+          price: "600",
+        },
+        {
+          nameUz: "Le Meurice",
+          nameRu: "Ле Морис",
+          nameEng: "Le Meurice",
+          price: "450",
+        },
+      ],
+      priceIncludes: {
+        uz: [
+          "Guruh transferlari aeroport - mehmonxona - aeroport",
+          "Dasturga muvofiq guruh o'tkazmalari",
+          "3* mehmonxonalarda joylashtirish",
+          "Ovqatlanish - nonushta",
+        ],
+        ru: [
+          "Групповые трансферы аэропорт - отель - аэропорт",
+          "Групповые трансферы согласно программе",
+          "Проживание в отелях 3*",
+          "Питание - завтрак",
+        ],
+        eng: [
+          "Group transfers airport - hotel - airport",
+          "Group transfers as per the program",
+          "Accommodation in 3* hotels",
+          "Meals - breakfast",
+        ],
+      },
+      additionalPayments: {
+        uz: [
+          "Toshkent – Parij – Toshkent – ekonom-klass havo reysi 9 400 000 so‘mdan",
+          "Test to‘lovi – bir kishi uchun 1 551 000 so‘m",
+          "Tibbiy sug‘urta polisi – bir kishi uchun 90 000 so‘mdan",
+          "Kompaniya xizmatlari – bir kishi uchun 500 000 so‘m",
+        ],
+        ru: [
+          "Ташкент – Париж – Ташкент – авиаперелет эконом-класса от 9 400 000 сум",
+          "Test сбор – 1 551 000 сум на человека",
+          "Медицинская страховка – от 90 000 сум на человека",
+          "Услуги компании – 500 000 сум на человека",
+        ],
+        eng: [
+          "Tashkent – Paris – Tashkent – economy class flight from 9,400,000 UZS",
+          "Test fee – 1,551,000 UZS per person",
+          "Medical insurance policy – from 90,000 UZS per person",
+          "Company services – 500,000 UZS per person",
+        ],
+      },
+    },
   ],
   setSlides: (newSlides) => set({ slides: newSlides }),
 }));

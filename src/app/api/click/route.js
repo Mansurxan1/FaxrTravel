@@ -7,33 +7,25 @@ import { kv } from '@vercel/kv';
 // Функция для сохранения информации о заказе
 async function saveOrderInfo(orderData) {
   try {
-    // Проверяем, работаем ли мы в продакшен-среде Vercel
-    if (process.env.VERCEL) {
-      // Используем Vercel KV Storage
-      await kv.set(`order:${orderData.orderId}`, JSON.stringify(orderData));
-      console.log('Информация о заказе сохранена в Vercel KV:', orderData.orderId);
-    } else {
-      // Локальное сохранение в файл
-      // Создаем директорию для хранения данных заказов, если она не существует
-      const dataDir = path.join(process.cwd(), 'data');
-      const ordersDir = path.join(dataDir, 'orders');
-      
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir);
-      }
-      
-      if (!fs.existsSync(ordersDir)) {
-        fs.mkdirSync(ordersDir);
-      }
-      
-      // Путь к файлу с данными заказа
-      const orderFilePath = path.join(ordersDir, `${orderData.orderId}.json`);
-      
-      // Сохраняем данные заказа в файл
-      fs.writeFileSync(orderFilePath, JSON.stringify(orderData, null, 2));
-      
-      console.log('Информация о заказе сохранена локально:', orderFilePath);
+    // Создаем директорию для хранения данных заказов, если она не существует
+    const dataDir = path.join(process.cwd(), 'data');
+    const ordersDir = path.join(dataDir, 'orders');
+    
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir);
     }
+    
+    if (!fs.existsSync(ordersDir)) {
+      fs.mkdirSync(ordersDir);
+    }
+    
+    // Путь к файлу с данными заказа
+    const orderFilePath = path.join(ordersDir, `${orderData.orderId}.json`);
+    
+    // Сохраняем данные заказа в файл
+    fs.writeFileSync(orderFilePath, JSON.stringify(orderData, null, 2));
+    
+    console.log('Информация о заказе сохранена:', orderFilePath);
     return true;
   } catch (error) {
     console.error('Ошибка при сохранении информации о заказе:', error);
@@ -44,31 +36,31 @@ async function saveOrderInfo(orderData) {
 // Функция для получения информации о заказе
 export async function getOrderInfo(orderId) {
   try {
-    // Проверяем, работаем ли мы в продакшен-среде Vercel
-    if (process.env.VERCEL) {
-      // Используем Vercel KV Storage
-      const orderDataStr = await kv.get(`order:${orderId}`);
-      if (!orderDataStr) {
-        console.error('Данные заказа не найдены в Vercel KV:', orderId);
-        return null;
-      }
-      return JSON.parse(orderDataStr);
-    } else {
-      // Локальное чтение из файла
-      // Путь к файлу с данными заказа
-      const orderFilePath = path.join(process.cwd(), 'data', 'orders', `${orderId}.json`);
-      
-      // Проверяем существование файла
-      if (!fs.existsSync(orderFilePath)) {
-        console.error('Файл с данными заказа не найден:', orderFilePath);
-        return null;
-      }
-      
-      // Читаем данные заказа из файла
-      const orderData = JSON.parse(fs.readFileSync(orderFilePath, 'utf8'));
-      
-      return orderData;
+    // Создаем директорию для хранения данных заказов, если она не существует
+    const dataDir = path.join(process.cwd(), 'data');
+    const ordersDir = path.join(dataDir, 'orders');
+    
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir);
     }
+    
+    if (!fs.existsSync(ordersDir)) {
+      fs.mkdirSync(ordersDir);
+    }
+    
+    // Путь к файлу с данными заказа
+    const orderFilePath = path.join(ordersDir, `${orderId}.json`);
+    
+    // Проверяем существование файла
+    if (!fs.existsSync(orderFilePath)) {
+      console.error('Файл с данными заказа не найден:', orderFilePath);
+      return null;
+    }
+    
+    // Читаем данные заказа из файла
+    const orderData = JSON.parse(fs.readFileSync(orderFilePath, 'utf8'));
+    
+    return orderData;
   } catch (error) {
     console.error('Ошибка при получении информации о заказе:', error);
     return null;
@@ -147,8 +139,8 @@ export async function POST(request) {
     const returnUrl = `/payment/success`;
     
     // Получаем хост из заголовков запроса для формирования абсолютного URL
-    const host = request.headers.get('host') || 'localhost:5174';
-    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const host = request.headers.get('host') || 'www.faxr-travel.uz';
+    const protocol = 'https'; // Всегда используем HTTPS для продакшена
     const absoluteReturnUrl = `${protocol}://${host}${returnUrl}`;
     
     // Сохраняем информацию о заказе
