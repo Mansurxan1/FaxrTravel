@@ -22,7 +22,6 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
     setError(null);
 
     try {
-      // Имитация успешного входа без обращения к внешнему API
       const user = { id: 1, email };
       const token = "dummy_token_for_local_auth";
       
@@ -41,7 +40,6 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
     setError(null);
 
     try {
-      // Имитация успешной регистрации без обращения к внешнему API
       const user = { id: 1, email };
       const token = "dummy_token_for_local_auth";
       

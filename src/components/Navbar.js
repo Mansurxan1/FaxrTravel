@@ -11,6 +11,7 @@ const Navbar = () => {
   const [lang, setLang] = useState("uz");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -45,11 +46,16 @@ const Navbar = () => {
     i18n.changeLanguage(lng);
     localStorage.setItem("lang", lng);
     setLang(lng);
+    setIsDropdownOpen(false);
     if (isMenuOpen) setIsMenuOpen(false);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -58,7 +64,7 @@ const Navbar = () => {
         isScrolled ? "bg-[#22C55E]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto p-2 sm:px-6 lg:px-8">
+      <div className="max-w-7xl pr-6 mx-auto">
         <div className="flex justify-between items-center h-16 md:h-20">
           <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
@@ -70,7 +76,7 @@ const Navbar = () => {
                 rounded-full 
                 transition-all duration-300 
                 md:w-[200px] md:h-[220px] 
-                object-contain 
+                object-cover
                 filter brightness-200 contrast-150 saturate-125
               "
             />
@@ -100,28 +106,27 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
-            <div className="relative group">
+            <div className="relative">
               <button
-                onClick={() => {
-                  if (isMenuOpen) setIsMenuOpen(false);
-                }}
+                onClick={toggleDropdown}
                 className="flex items-center bg-white text-green-500 text-sm rounded-md border border-green-500 px-2 md:px-4 py-1 md:py-2 transition duration-150 ease-in-out hover:bg-green-50"
               >
                 {lang.toUpperCase()}
                 <ChevronDown className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
               </button>
-              <ul className="absolute left-0 w-20 bg-white border border-green-500 rounded-lg shadow-md z-10 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200">
-                {["uz", "ru", "en"].map((lng) => (
-                  <li
-                    key={lng}
-                    onClick={() => changeLanguage(lng)}
-                    onMouseEnter={() => changeLanguage(lng)} // Added hover functionality
-                    className="p-2 text-green-600 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer text-center"
-                  >
-                    {lng.toUpperCase()}
-                  </li>
-                ))}
-              </ul>
+              {isDropdownOpen && (
+                <ul className="absolute left-0 w-20 bg-white border border-green-500 rounded-lg shadow-md z-10 transition-opacity duration-200">
+                  {["uz", "ru", "en"].map((lng) => (
+                    <li
+                      key={lng}
+                      onClick={() => changeLanguage(lng)}
+                      className="p-2 text-green-600 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer text-center"
+                    >
+                      {lng.toUpperCase()}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <div className="lg:hidden">
@@ -142,7 +147,7 @@ const Navbar = () => {
                     className="fixed inset-0 bg-black/50 z-40"
                     onClick={toggleMenu}
                   />
-                  <ul className="absolute right-4 top-16 w-48 bg-white border border-green-500 rounded-lg shadow-md z-50 transition-all">
+                  <ul className="absolute right-4 top-16 w-48 overflow-hidden bg-white border border-green-500 rounded-lg shadow-md z-50 transition-all">
                     {["about", "services", "trips", "contact"].map((item) => (
                       <li
                         key={item}
@@ -152,7 +157,7 @@ const Navbar = () => {
                             ?.scrollIntoView({ behavior: "smooth" });
                           setIsMenuOpen(false);
                         }}
-                        className="p-3 text-green-600 hover:bg-green-500 hover:text-white cursor-pointer transition-all duration-150 ease-in-out flex items-center space-x-2"
+                        className="p-3 text-green-600 hover:bg-green-500  hover:text-white cursor-pointer transition-all duration-150 ease-in-out flex items-center space-x-2"
                       >
                         <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
                         <span>{t(item)}</span>

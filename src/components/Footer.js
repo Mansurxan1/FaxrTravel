@@ -24,7 +24,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-green-600 border-t border-green-500 shadow-2xl text-white">
-      <div className="container mx-auto px-4 py-8 sm:py-12">
+      <div className="pl-6 py-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <motion.div
             className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start"
@@ -102,24 +102,14 @@ export default function Footer() {
               {t("footer.legal")}
             </h3>
             <nav className="flex flex-col items-center sm:items-start space-y-2 sm:space-y-3">
-              <Link
-                href="/terms"
-                className="text-sm hover:text-green-200 transition-colors duration-300"
-              >
-                {t("footer.terms")}
-              </Link>
-              <Link
-                href="/privacy"
-                className="text-sm hover:text-green-200 transition-colors duration-300"
-              >
-                {t("footer.privacy")}
-              </Link>
-              <Link
-                href="/customer-agreement"
+              <a
+                href="/Shartnoma.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm hover:text-green-200 transition-colors duration-300"
               >
                 {t("footer.agreement")}
-              </Link>
+              </a>
             </nav>
           </motion.div>
 

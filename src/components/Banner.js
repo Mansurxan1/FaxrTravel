@@ -35,7 +35,7 @@ const Banner = () => {
           : slide.descEng,
       hotelName: slide.hotels
         ? lang === "uz"
-          ? slide.hotels[0].nameUz 
+          ? slide.hotels[0].nameUz
           : lang === "ru"
           ? slide.hotels[0].nameRu
           : slide.hotels[0].nameEng
@@ -89,7 +89,7 @@ const Banner = () => {
                 )}
                 <div className="mt-4">
                   <button className="bg-green-600 px-6 py-3 rounded-full text-white hover:bg-green-700 transition">
-                    {slide.day} {t("banner.days")}
+                    {slide.day} {t("day")}
                   </button>
                 </div>
               </div>

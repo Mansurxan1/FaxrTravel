@@ -12,12 +12,10 @@ const Tour = () => {
   const [selectedTourId, setSelectedTourId] = useState(null);
   const [isClient, setIsClient] = useState(false);
 
-  // Ensure client-side rendering
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Handle language changes
   useEffect(() => {
     if (selectedTourId) {
       document.documentElement.style.overflow = "hidden";
@@ -29,7 +27,6 @@ const Tour = () => {
     };
   }, [selectedTourId]);
 
-  // Helper function to get language-specific text, similar to Banner
   const getSlideText = (slide) => {
     const lang = isClient ? i18n.language : "uz";
     return {
@@ -52,7 +49,7 @@ const Tour = () => {
   const closeModal = () => setSelectedTourId(null);
 
   return (
-    <div id="trips" className="container mx-auto py-16">
+    <div id="trips" className="mx-auto mb-5">
       <h2 className="text-4xl md:text-5xl text-white font-extrabold text-center mb-12 drop-shadow-md">
         {t("trips")}
       </h2>

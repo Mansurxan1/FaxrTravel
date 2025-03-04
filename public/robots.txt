@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://faxr-travel.uz
+
+# Sitemaps
+Sitemap: https://faxr-travel.uz/sitemap.xml

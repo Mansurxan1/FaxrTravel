@@ -11,7 +11,6 @@ const PaymentForm = ({ onSubmit, price, tourName, onCancel }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Валидация
     if (!name.trim()) {
       setError(t('please_enter_name'));
       return;

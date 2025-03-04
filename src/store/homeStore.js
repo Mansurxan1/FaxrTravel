@@ -22,13 +22,13 @@ const useHomeStore = create((set) => ({
           nameUz: "Burj Al Arab",
           nameRu: "Бурдж Аль Араб",
           nameEng: "Burj Al Arab",
-          price: "500",
+          price: "5 000 000",
         },
         {
           nameUz: "Atlantis The Palm",
           nameRu: "Атлантис Зе Палм",
           nameEng: "Atlantis The Palm",
-          price: "350",
+          price: "3 500 000",
         },
       ],
       priceIncludes: {
@@ -44,7 +44,7 @@ const useHomeStore = create((set) => ({
           "Проживание в отелях 3*",
           "Питание - завтрак",
         ],
-        eng: [
+        en: [
           "Group transfers airport - hotel - airport",
           "Group transfers as per the program",
           "Accommodation in 3* hotels",
@@ -64,7 +64,7 @@ const useHomeStore = create((set) => ({
           "Медицинская страховка – от 90 000 сум на человека",
           "Услуги компании – 500 000 сум на человека",
         ],
-        eng: [
+        en: [
           "Tashkent – Paris – Tashkent – economy class flight from 9,400,000 UZS",
           "Visa fee – 1,551,000 UZS per person",
           "Medical insurance policy – from 90,000 UZS per person",
@@ -91,13 +91,13 @@ const useHomeStore = create((set) => ({
           nameUz: "Four Seasons Sultanahmet",
           nameRu: "Фор Сизонс Султанахмет",
           nameEng: "Four Seasons Sultanahmet",
-          price: "400",
+          price: "4 000 000",
         },
         {
           nameUz: "Pera Palace",
           nameRu: "Пера Палас",
           nameEng: "Pera Palace",
-          price: "300",
+          price: "3 000 000",
         },
       ],
       priceIncludes: {
@@ -113,7 +113,7 @@ const useHomeStore = create((set) => ({
           "Проживание в отелях 3*",
           "Питание - завтрак",
         ],
-        eng: [
+        en: [
           "Group transfers airport - hotel - airport",
           "Group transfers as per the program",
           "Accommodation in 3* hotels",
@@ -133,7 +133,7 @@ const useHomeStore = create((set) => ({
           "Медицинская страховка – от 90 000 сум на человека",
           "Услуги компании – 500 000 сум на человека",
         ],
-        eng: [
+        en: [
           "Tashkent – Paris – Tashkent – economy class flight from 9,400,000 UZS",
           "Visa fee – 1,551,000 UZS per person",
           "Medical insurance policy – from 90,000 UZS per person",
@@ -161,13 +161,13 @@ const useHomeStore = create((set) => ({
           nameUz: "Ritz Paris",
           nameRu: "Ритц Париж",
           nameEng: "Ritz Paris",
-          price: "600",
+          price: "6 000 000",
         },
         {
           nameUz: "Le Meurice",
           nameRu: "Ле Морис",
           nameEng: "Le Meurice",
-          price: "450",
+          price: "4 500 000",
         },
       ],
       priceIncludes: {
@@ -183,7 +183,7 @@ const useHomeStore = create((set) => ({
           "Проживание в отелях 3*",
           "Питание - завтрак",
         ],
-        eng: [
+        en: [
           "Group transfers airport - hotel - airport",
           "Group transfers as per the program",
           "Accommodation in 3* hotels",
@@ -203,7 +203,7 @@ const useHomeStore = create((set) => ({
           "Медицинская страховка – от 90 000 сум на человека",
           "Услуги компании – 500 000 сум на человека",
         ],
-        eng: [
+        en: [
           "Tashkent – Paris – Tashkent – economy class flight from 9,400,000 UZS",
           "Visa fee – 1,551,000 UZS per person",
           "Medical insurance policy – from 90,000 UZS per person",

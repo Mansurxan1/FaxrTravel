@@ -88,19 +88,15 @@
     }
   ],
   "footer": {
-      "address": "123 Toshkent shahri, O'zbekiston",
-      "phone": "+998 90 123 45 67",
       "navigation": "Ma'lumot",
       "legal": "Huquqiy",
-      "terms": "Foydalanuvchi shartlari",
-      "privacy": "Maxfiylik siyosati",
       "agreement": "Mijoz maxfiylik shartnomasi",
       "social": "Ijtimoiy tarmoqlar",
       "copyright": "Barcha huquqlar himoyalangan."
   },
   "processing": "Jarayonda...",
   "payment_success": "To'lov muvaffaqiyatli yakunlandi!",
-  "payment_success_message": "Sizning to'lovingiz muvaffaqiyatli amalga oshirildi. Xarid uchun rahmat! Siz ko'rsatilgan telefon raqamingizga yoki telegram accountingizga tasdiqlash xabarini olasiz.",
+  "payment_success_message": "Sizning to'lovingiz muvaffaqiyatli amalga oshirildi. Xarid uchun rahmat! Siz ko'rsatilgan telefon raqamingizga yoki telegram akkountingizga tasdiqlash xabarini olasiz.",
   "back_to_home": "Bosh sahifaga qaytish",
   "not_found": "Ma'lumot topilmadi"
 }

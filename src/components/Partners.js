@@ -25,7 +25,7 @@ const Partners = () => {
   const { t } = useTranslation();
   return (
     <div className="my-5">
-      <div className="container mx-auto px-4">
+      <div className="px-4">
         <h2 className="text-3xl font-bold text-white text-center mb-8">
           {t("partner")}
         </h2>
@@ -39,12 +39,13 @@ const Partners = () => {
             dynamicBullets: true,
           }}
           autoplay={{
-            delay: 5000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           breakpoints={{
             0: { slidesPerView: 2 },
-            641: { slidesPerView: 3 },
+            470: { slidesPerView: 3 },
+            641: { slidesPerView: 4 },
             1025: { slidesPerView: 4 },
             1281: { slidesPerView: 5 },
           }}
@@ -56,7 +57,7 @@ const Partners = () => {
                 <img
                   src={image}
                   alt={`Partner ${index + 1}`}
-                  className="w-full h-[180px] object-cover rounded-lg"
+                  className="w-full h-[130px] object-cover rounded-lg"
                 />
               </div>
             </SwiperSlide>
