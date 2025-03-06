@@ -17,6 +17,8 @@ import {
   FaQuoteLeft,
   FaUsers,
   FaClock,
+  FaEnvelope,
+  FaPassport,
 } from "react-icons/fa";
 import { FaBuildingColumns } from "react-icons/fa6";
 import { motion, useAnimation } from "framer-motion";
@@ -102,7 +104,7 @@ const CompanyInfo = () => {
     { icon: FaCoffee, text: t("tour_package.food") },
     { icon: FaCar, text: t("tour_package.transfer") },
     { icon: FaStar, text: t("tour_package.guides") },
-    { icon: FaPhoneAlt, text: t("tour_package.support") },
+    { icon: FaPassport, text: t("tour_package.support") },
   ];
 
   const [headerRef, headerInView, headerEntry] = useInView({
@@ -178,7 +180,7 @@ const CompanyInfo = () => {
   return (
     <main className="min-h-screen bg-gradient-to-br bg-[#22C55E]">
       <section className="relative py-10 px-4 overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-[1256px] mx-auto relative z-10">
           <motion.div
             ref={headerRef}
             className="text-center mb-16"
@@ -258,6 +260,7 @@ const CompanyInfo = () => {
               {t("about")}
             </h2>
             <p className="text-green-100 text-lg leading-relaxed text-justify">
+              <span className="font-bold">{t("leader")} </span>
               {t("about_text")}
             </p>
           </motion.div>
@@ -273,7 +276,7 @@ const CompanyInfo = () => {
             <h2 className="text-3xl font-bold text-white mb-8 text-center">
               {t("tour_package_title")}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 custom:grid-cols-2 services:grid-cols-3 gap-6">
               {tourPackageIncludes.map((service, index) => (
                 <motion.div
                   key={index}
@@ -285,7 +288,9 @@ const CompanyInfo = () => {
                   }}
                 >
                   <service.icon className="w-10 h-10 mx-auto mb-4 text-white" />
-                  <p className="text-white font-medium">{service.text}</p>
+                  <p className="text-white font-medium text-justify">
+                    {service.text}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -341,6 +346,13 @@ const CompanyInfo = () => {
                       whileHover={{ scale: 1.2, rotate: -15 }}
                     >
                       <FaTelegram />
+                    </motion.a>
+                    <motion.a
+                      href="mailto:abdulaziiizzz7@gmail.com"
+                      className="flex items-center gap-2 text-white transition"
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <FaEnvelope />
                     </motion.a>
                   </div>
                 </div>

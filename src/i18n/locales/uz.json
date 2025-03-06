@@ -5,12 +5,17 @@
   "contact": "Bog'lanish",
   "company_name": "FAXR TRAVEL",
   "company_type": "Mas'uliyati Cheklangan Jamiyat",
-  "about_text": "FAXR TRAVEL MCHJ – Oʻzbekistondagi yetakchi sayohat agentliklaridan biri bo'lib, biz mijozlarimizga unutilmas sayohat tajribalarini taqdim etamiz. Dunyoning eng go'zal maskanlariga tashrif buyurish, yangi madaniyatlar bilan tanishish va orzularingizni ro'yobga chiqarish imkoniyatini yaratamiz. Bizning tajribali jamoamiz sizning sayohatingizni maksimal darajada qulay, xavfsiz va esda qolarli qilish uchun doimo tayyor. FAXR TRAVEL bilan dunyoni kashf eting va har bir sayohatni unutilmas lahzaga aylantiring!",
+  "leader": "Javohir Jalilov Jahongir o'g'li",
+  "about_text": " – FAXR TRAVEL MCHJ kompaniyasining rahbari bo‘lib, o‘z sohasida katta tajribaga ega mutaxassis sifatida kompaniyamiz rivojiga katta hissa qo‘shib kelmoqda.  Kompaniyamiz 1-avgust, 2024 yildan boshlab rasmiy faoliyatini boshlagan bo‘lib, mijozlarimizga yuqori sifatli sayyohlik xizmatlarini taqdim etadi.  FAXR TRAVEL – Oʻzbekistondagi yetakchi sayohat agentliklaridan biri bo‘lib, biz mijozlarimizga unutilmas sayohat tajribalarini taqdim etamiz. Dunyoning eng go‘zal maskanlariga tashrif buyurish, yangi madaniyatlar bilan tanishish va orzularingizni ro‘yobga chiqarish imkoniyatini yaratamiz. Bizning tajribali jamoamiz sizning sayohatingizni maksimal darajada qulay, xavfsiz va esda qolarli qilish uchun doimo tayyor.  FAXR TRAVEL bilan dunyoni kashf eting va har bir sayohatni unutilmas lahzaga aylantiring!",
   "tour_package_title": "Bizning Xizmatlar",
   "partner": "Bizning Hamkorlar",
   "read_more": "Batafsil",
   "phones": "Telefon",
   "purchase": "Sotib olish",
+  "payment_methods": "Hozirda to‘lov tizimlarimiz:",
+  "click": "Click orqali onlayn to‘lov va",
+  "cash": "Naqd pul orqali to‘lash imkoniyati",
+  "future_note": "Kelajakda to‘lov tizimlarini yanada kengaytirishni rejalashtirmoqdamiz!",
   "book": "Bron qilish",
   "namePlaceholder": "Ismingizni kiriting",
   "register": "Ro'yxatdan o'tish",
@@ -51,12 +56,12 @@
     "day": "kunlik"
   },
   "tour_package": {
-    "flight": "Aviabiletlar",
-    "hotel": "Mehmonxona xizmatlari",
-    "food": "Ovqatlanish - konsepsiyaga muvofiq",
-    "transfer": "Kutib olish va kuzatib qo'yish xizmati",
-    "guides": "Professional gidlar",
-    "support": "24/7 qo'llab-quvvatlash"
+    "flight": "Aviabiletlar: Biz sizning sayohatingizni imkon qadar qulay va muammosiz qilish uchun eng yaxshi aviakompaniyalar bilan hamkorlik qilamiz. Aviabiletlar xizmati orqali siz o'zingiz uchun qulay vaqt va marshrutni tanlashingiz mumkin. Biz hamyonbop narxlardan tortib premium sinfgacha bo'lgan variantlarni taklif qilamiz, shuningdek, bron qilish jarayonini soddalashtirib, sizga eng yaxshi tajribani taqdim etamiz.",
+    "hotel": "Mehmonxona xizmatlari: Dam olishingizni unutilmas qilish uchun biz dunyoning turli burchaklarida joylashgan yuqori darajadagi mehmonxonalarni taklif etamiz. Sizning ehtiyojlaringizga qarab — oilaviy dam olish, romantik sayohat yoki biznes safari uchun — 3 yulduzdan 5 yulduzgacha bo'lgan mehmonxonalarni tanlash imkoniyatini beramiz. Har bir mehmonxonada qulaylik, xavfsizlik va yuqori sifatli xizmat kafolatlanadi.",
+    "food": "Ovqatlanish - Sayohat davomida ovqatlanish — bu nafaqat ehtiyoj, balki zavq hamdir. Biz tanlagan tur paketiga qarab, “hamma narsa ichida” (all-inclusive), faqat nonushta yoki maxsus menyular kabi ovqatlanish variantlarini taklif qilamiz. Mahalliy taomlardan tortib xalqaro oshxonagacha, har bir mijozning didiga mos keladigan taomlar bilan ta'minlaymiz.",
+    "transfer": "Aeroportdan mehmonxonaga yoki sayohat davomidagi boshqa manzillarga qulay va xavfsiz yetib borishingiz uchun transfer xizmatlarini tashkil qilamiz. Professional haydovchilar va zamonaviy transport vositalari bilan sizni manzilingizga o'z vaqtida yetkazamiz. Shaxsiy avtomobillar, mikroavtobuslar yoki guruhlar uchun maxsus transport — barchasi sizning ehtiyojlaringizga qarab.",
+    "guides": "Gid va tur operator xizmatlari: Sayohatingizni yanada qiziqarli va ma’lumotga boy qilish uchun tajribali gidlar va tur operatorlar sizga hamroh bo'ladi. Gidlar mahalliy madaniyat, tarix va diqqatga sazovor joylar haqida chuqur ma'lumot beradi, tur operatorlar esa marshrutlarni rejalashtirib, sayohatni muammosiz tashkil qiladi. Savollaringizga javob topishda yordam berilib, har bir sayyoh uchun shaxsiy yondashuv ta'minlanadi.",
+    "support": "Viza xizmati: Sayohatingizni rejalashtirishda viza olish jarayonini osonlashtirish uchun sizga professional yordam ko'rsatamiz. Biz viza hujjatlari tayyorlash, elchixonalar bilan aloqa va kerakli ma'lumotlarni taqdim etish bo'yicha to'liq xizmatni taklif qilamiz. Siz faqat sayohatga tayyorlaning — qolganini biz hal qilamiz!"
   },
   "achievements": {
     "official": "Rasmiy MCHJ",
@@ -90,7 +95,7 @@
   "footer": {
       "navigation": "Ma'lumot",
       "legal": "Huquqiy",
-      "agreement": "Mijoz maxfiylik shartnomasi",
+      "agreement": "Foydalanuvchi shartnomasi va maxfiylik siyosati",
       "social": "Ijtimoiy tarmoqlar",
       "copyright": "Barcha huquqlar himoyalangan."
   },

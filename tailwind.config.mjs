@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        services: "1000px",
         custom: "575px",
         logo: "380px",
       },

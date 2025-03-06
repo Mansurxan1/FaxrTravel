@@ -7,6 +7,7 @@ import CompanyInfo from "@/components/ComponyInfo";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import useHomeStore from "@s/store/homeStore";
+import PaymentCard from "@/components/PaymentCard";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -134,9 +135,9 @@ export default function Home() {
           setIsLoading(false);
           return 100;
         }
-        return prev + 2; 
+        return prev + 2;
       });
-    }, 20); 
+    }, 20);
 
     return () => clearInterval(interval);
   }, [slides, setSlides]);
@@ -172,6 +173,7 @@ export default function Home() {
       <Navbar />
       <Banner tours={{ data: slides }} />
       <CompanyInfo />
+      <PaymentCard />
       <Footer />
     </>
   );

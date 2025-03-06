@@ -3,7 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { FaInstagram, FaPhoneAlt, FaTelegram } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaInstagram,
+  FaPhoneAlt,
+  FaTelegram,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -24,10 +29,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-green-600 border-t border-green-500 shadow-2xl text-white">
-      <div className="pl-6 py-8 max-w-7xl mx-auto">
+      <div className="px-2 py-8 max-w-[1256px] mx-auto">
         <div className="grid grid-cols-1 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <motion.div
-            className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start"
+            className="space-y-4 sm:space-y-6 flex flex-col items-center text-center"
             {...fadeInUp}
           >
             <Link
@@ -46,17 +51,26 @@ export default function Footer() {
                 priority
               />
             </Link>
-            <div className="flex flex-col items-center sm:items-start space-y-2">
+            <div className="flex flex-col text-center items-center sm:items-start space-y-2">
               <div className="flex items-center justify-center space-x-2">
                 <p className="text-sm leading-relaxed">{t("address")}</p>
               </div>
-              <div className="flex items-center justify-center space-x-2">
+              <div className="flex items-center mx-auto justify-center space-x-2">
                 <FaPhoneAlt className="w-5 h-5 text-white" />
                 <a
                   href="tel:+998953120202"
                   className="text-sm hover:underline transition-colors duration-300"
                 >
                   {t("phone")}
+                </a>
+              </div>
+              <div className="flex items-center mx-auto justify-center space-x-2">
+                <FaEnvelope className="w-5 h-5 text-white" />
+                <a
+                  href="mailto:abdulaziiizzz7@gmail.com"
+                  className="text-sm hover:underline transition-colors duration-300"
+                >
+                  abdulaziiizzz7@gmail.com
                 </a>
               </div>
             </div>
@@ -138,6 +152,12 @@ export default function Footer() {
               >
                 <FaTelegram className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 <span className="sr-only">Telegram</span>
+              </a>
+              <a
+                href="mailto:abdulaziiizzz7@gmail.com"
+                className="hover:opacity-80 transition-opacity duration-300"
+              >
+                <FaEnvelope className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </a>
             </div>
           </motion.div>

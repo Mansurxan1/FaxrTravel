@@ -7,7 +7,8 @@
   "company_type": "Limited Liability Company",
   "profile": "Profile",
   "login": "Sign in",
-  "about_text": "FAXR TRAVEL LLC is one of the leading travel agencies in Uzbekistan, dedicated to providing our clients with unforgettable travel experiences. We offer the opportunity to visit the world's most beautiful destinations, explore new cultures, and turn your dreams into reality. Our experienced team is always ready to make your journey as comfortable, safe, and memorable as possible. Discover the world with FAXR TRAVEL and turn every trip into an unforgettable adventure!",
+  "leader": "Javohir Jalilov Jahongir’s",
+  "about_text": " son is the head of FAXR TRAVEL MCHJ, an experienced professional who has made a significant contribution to the development of our company. Our company officially started its operations on August 1, 2024, offering high-quality travel services to our clients. FAXR TRAVEL is one of the leading travel agencies in Uzbekistan. We provide our clients with unforgettable travel experiences, offering the opportunity to visit the most beautiful destinations in the world, explore new cultures, and turn dreams into reality. Our experienced team is always ready to make your journey as comfortable, safe, and memorable as possible. Discover the world with FAXR TRAVEL and turn every trip into an unforgettable moment!",
   "tour_package_title": "Our Services",
   "partner": "Our Partners",
   "passengers": "Passengers",
@@ -28,6 +29,10 @@
   "loading": "Loading...",
   "bron": "No purchased or canceled tours",
   "passenger": "Number of passengers",
+  "payment_methods": "Currently, our payment methods:",
+  "click": "Online payment via Click and",
+  "cash": "Cash payment option",
+  "future_note": "We plan to expand our payment methods in the future!",
   "totalprice": "Total price",
   "startdata": "Departure date",
   "duration": "Duration",
@@ -62,12 +67,12 @@
     "days": "day"
   },
   "tour_package": {
-    "flight": "Flight Tickets",
-    "hotel": "Hotel Services",
-    "food": "Meals - According to Concept",
-    "transfer": "Pick-up and Drop-off Service",
-    "guides": "Professional Guides",
-    "support": "24/7 Support"
+    "flight": "Flight Tickets: We partner with top airlines to ensure your journey is as comfortable and seamless as possible. Our flight ticket service allows you to choose the time and route that suits you best. From affordable options to premium class, we offer a range of choices while simplifying the booking process to deliver the best experience for you.",
+    "hotel": "Hotel Services: To make your vacation unforgettable, we offer top-tier hotels located in various corners of the world. Whether it’s a family getaway, a romantic trip, or a business journey, we provide options ranging from 3-star to 5-star hotels. Every hotel ensures comfort, safety, and high-quality service.",
+    "food": "Meals - Dining during your trip is not just a necessity but also a delight. Depending on your chosen tour package, we offer dining options such as “all-inclusive,” breakfast-only, or custom menus. From local cuisine to international dishes, we ensure meals that cater to every client’s taste.",
+    "transfer": "We arrange transfer services to ensure you travel comfortably and safely from the airport to your hotel or other destinations during your trip. With professional drivers and modern vehicles, we get you to your location on time. Personal cars, minibuses, or group transport—everything is tailored to your needs.",
+    "guides": "Guide and Tour Operator Services: To make your journey engaging and informative, experienced guides and tour operators will accompany you. Guides provide deep insights into local culture, history, and attractions, while tour operators plan routes and ensure a seamless trip. They assist with your questions, offering a personalized approach for every traveler.",
+    "support": "Visa Services: We offer professional assistance to simplify the visa process for your trip. Our comprehensive services include preparing visa documents, liaising with embassies, and providing all necessary information. You focus on getting ready for your journey—we’ll handle the rest!"
   },
   "achievements": {
     "official": "Official LLC",
@@ -98,12 +103,8 @@
   ],
   "footer": {
     "address": "123 Tashkent city, Uzbekistan",
-    "phone": "+998 90 123 45 67",
-    "navigation": "Information",
     "legal": "Legal",
-    "terms": "Terms of Use",
-    "privacy": "Privacy Policy",
-    "agreement": "Customer Agreement",
+    "agreement": "User Agreement and Privacy Policy",
     "social": "Social Media",
     "copyright": "All rights reserved."
   }
