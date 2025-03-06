@@ -36,6 +36,12 @@ const TourDetails = ({ id, onClose }) => {
           : lang === "ru"
           ? slide.descRu
           : slide.descEng,
+      travel:
+        lang === "uz"
+          ? slide.travelUz
+          : lang === "ru"
+          ? slide.travelRu || slide.travelUz
+          : slide.travelEng || slide.travelUz,
       visa:
         lang === "uz"
           ? slide.visaUz
@@ -57,8 +63,15 @@ const TourDetails = ({ id, onClose }) => {
     };
   };
 
-  const { title, desc, visa, hotels, priceIncludes, additionalPayments } =
-    getSlideText();
+  const {
+    title,
+    desc,
+    visa,
+    travel,
+    hotels,
+    priceIncludes,
+    additionalPayments,
+  } = getSlideText();
 
   const handleBuyClick = () => {
     setShowPaymentForm(true);
@@ -126,7 +139,7 @@ const TourDetails = ({ id, onClose }) => {
   };
 
   return (
-    <section className="min-h-screen mt-[100px] bg-gradient-to-br from-green-100 via-white to-green-50 p-5">
+    <section className="min-h-screen pt-[100px] px-5 pb-7 bg-gradient-to-br from-green-100 via-white to-green-50 ">
       <div className="max-w-5xl mx-auto">
         <div className="relative w-full h-[30vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:shadow-3xl">
           <img
@@ -153,8 +166,9 @@ const TourDetails = ({ id, onClose }) => {
                 {slide.price} {t("sum")}
               </span>
             </p>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg flex flex-col text-gray-600">
               {t("duration")}: {slide.day} {t("day")}
+              <span>{travel}</span>
             </p>
           </div>
           <div className="bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-lg border border-green-200">
