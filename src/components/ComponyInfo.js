@@ -241,7 +241,7 @@ const CompanyInfo = () => {
           <motion.div
             ref={aboutRef}
             id="about"
-            className="backdrop-blur-lg rounded-3xl bg-[#22C55E] p-4 md:p-12 mb-16 border border-white/20 shadow-xl"
+            className="backdrop-blur-lg rounded-3xl bg-[#22C55E] p-6 mb-10 border border-white/20 shadow-xl"
             variants={containerVariants}
             initial="hidden"
             animate={controls.about}
@@ -250,71 +250,108 @@ const CompanyInfo = () => {
               {t("about")}
             </h2>
             <p className="text-green-100 text-lg leading-relaxed text-justify">
-              <span className="font-bold uppercase">{t("leader")} </span>
               {t("about_text")}
             </p>
           </motion.div>
           <motion.div
             ref={contactRef}
             id="contact"
-            className="bg-white/10 bg-[#22C55E] backdrop-blur-lg rounded-3xl p-4 md:p-12 mb-16 border border-white/20 shadow-xl"
+            className="relative rounded-3xl mx-2 mb-5 p-4 md:p-6 shadow-2xl overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate={controls.contact}
           >
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-3xl z-0" />
+
+            <h2 className="relative text-2xl md:text-3xl font-extrabold text-white text-center mb-8 md:mb-12 z-10 drop-shadow-lg">
               {t("contact_title")}
             </h2>
-            <div className="space-y-6">
-              <div className="flex flex-col items-center gap-6">
-                <motion.a
-                  href="tel:+998953120202"
-                  className="inline-flex items-center gap-3 bg-[#22C55E] text-white px-8 py-4 rounded-full text-base md:text-lg font-semibold shadow-lg transition duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaPhoneAlt className="animate-bounce" />
-                  {t("phone")}
-                </motion.a>
-                <div className="text-center space-y-2">
-                  <div className="flex items-center justify-center gap-2 text-green-100">
-                    <FaMapMarkerAlt className="text-green-100 h-5 w-5 flex-shrink-0" />
-                    <p>{t("address")}</p>
-                  </div>
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <motion.div
+                className="p-4 rounded-xl shadow-lg border border-white/20 flex flex-col items-center"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-2">
+                  {t("leader_name")}
+                </h3>
+                <p className="text-green-100 text-base md:text-lg font-semibold text-center">
+                  {t("leader")}
+                </p>
+                <span className="text-sm md:text-base text-white text-justify mt-2">
+                  {t("leaderinfo") || "Leading with passion and expertise."}
+                </span>
+              </motion.div>
+
+              <motion.div
+                className="p-4 bg-white/10 rounded-xl shadow-lg border border-white/20 flex flex-col items-center"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <FaMapMarkerAlt className="text-white text-3xl md:text-4xl mb-3 md:mb-4" />
+                <p className="text-white text-sm md:text-lg text-center mb-2 md:mb-3">
+                  {t("address")}
+                </p>
+                <div className="flex items-center gap-2 text-white">
+                  <FaClock className="text-white h-4 w-4 md:h-5 md:w-5" />
+                  <p className="text-sm md:text-base">
+                    {t("everyday")}: 9:00 - 21:00
+                  </p>
                 </div>
-                <div className="flex flex-col items-center gap-6">
-                  <h3 className="font-bold text-lg text-white">
-                    {t("social_media")}
-                  </h3>
-                  <div className="flex gap-6 text-3xl">
-                    <motion.a
-                      href="https://instagram.com/faxr.travel"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white transition"
-                      whileHover={{ scale: 1.2, rotate: 15 }}
-                    >
-                      <FaInstagram />
-                    </motion.a>
-                    <motion.a
-                      href="https://t.me/faxrtravel"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white transition"
-                      whileHover={{ scale: 1.2, rotate: -15 }}
-                    >
-                      <FaTelegram />
-                    </motion.a>
-                    <motion.a
-                      href="mailto:abdulaziiizzz7@gmail.com"
-                      className="flex items-center gap-2 text-white transition"
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FaEnvelope />
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="relative z-10 mt-6 md:mt-8 flex justify-center"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <motion.a
+                href="tel:+998953120202"
+                className="inline-flex items-center gap-2 bg-white/20 text-white text-sm md:text-lg font-semibold px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30 shadow-md transition duration-300"
+                whileHover={{
+                  scale: 1.1,
+                  backgroundColor: "rgba(255,255,255,0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaPhoneAlt className="h-4 w-4 md:h-5 md:w-5 animate-bounce" />
+                {t("phone")}
+              </motion.a>
+            </motion.div>
+
+            <div className="relative z-10 mt-6 md:mt-8 flex justify-center gap-6 md:gap-8 text-2xl md:text-4xl">
+              <motion.a
+                href="https://instagram.com/faxr.travel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white transition"
+                whileHover={{ scale: 1.2, rotate: 10, color: "#fff" }}
+              >
+                <FaInstagram />
+              </motion.a>
+              <motion.a
+                href="https://t.me/faxrtravel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white transition"
+                whileHover={{ scale: 1.2, rotate: -10, color: "#fff" }}
+              >
+                <FaTelegram />
+              </motion.a>
+              <motion.a
+                href="mailto:abdulaziiizzz7@gmail.com"
+                className="text-white transition"
+                whileHover={{ scale: 1.2, color: "#fff" }}
+              >
+                <FaEnvelope />
+              </motion.a>
             </div>
           </motion.div>
 

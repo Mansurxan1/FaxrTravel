@@ -49,7 +49,7 @@ const Tour = () => {
   const closeModal = () => setSelectedTourId(null);
 
   return (
-    <div id="trips" className="mx-auto mb-5">
+    <div id="trips" className="mx-auto mb-10">
       <h2 className="text-4xl md:text-5xl text-white font-extrabold text-center mb-12 drop-shadow-md">
         {t("trips")}
       </h2>
@@ -70,7 +70,7 @@ const Tour = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-6 flex flex-col items-center flex-grow group">
+              <div className="p-4 flex flex-col items-center flex-grow group">
                 <h2 className="text-2xl font-semibold text-green-800 mb-3 text-center transition-colors duration-300">
                   {title}
                 </h2>
