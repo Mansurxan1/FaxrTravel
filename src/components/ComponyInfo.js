@@ -93,7 +93,7 @@ const CompanyInfo = () => {
     {
       icon: FaClock,
       text: t("achievements.service"),
-      value: "24/7",
+      value: "9:00 - 21:00",
       suffix: "",
     },
   ];
@@ -107,27 +107,27 @@ const CompanyInfo = () => {
     { icon: FaPassport, text: t("tour_package.support") },
   ];
 
-  const [headerRef, headerInView, headerEntry] = useInView({
+  const [headerRef, headerInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
-  const [achievementsRef, achievementsInView, achievementsEntry] = useInView({
+  const [achievementsRef, achievementsInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
-  const [aboutRef, aboutInView, aboutEntry] = useInView({
+  const [aboutRef, aboutInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
-  const [servicesRef, servicesInView, servicesEntry] = useInView({
+  const [servicesRef, servicesInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
-  const [contactRef, contactInView, contactEntry] = useInView({
+  const [contactRef, contactInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
-  const [testimonialsRef, testimonialsInView, testimonialsEntry] = useInView({
+  const [testimonialsRef, testimonialsInView] = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
@@ -142,39 +142,29 @@ const CompanyInfo = () => {
   };
 
   useEffect(() => {
-    if (headerInView && scrollingDown) {
-      controls.header.start("visible");
-    }
+    if (headerInView && scrollingDown) controls.header.start("visible");
   }, [headerInView, scrollingDown, controls.header]);
 
   useEffect(() => {
-    if (achievementsInView && scrollingDown) {
+    if (achievementsInView && scrollingDown)
       controls.achievements.start("visible");
-    }
   }, [achievementsInView, scrollingDown, controls.achievements]);
 
   useEffect(() => {
-    if (aboutInView && scrollingDown) {
-      controls.about.start("visible");
-    }
+    if (aboutInView && scrollingDown) controls.about.start("visible");
   }, [aboutInView, scrollingDown, controls.about]);
 
   useEffect(() => {
-    if (servicesInView && scrollingDown) {
-      controls.services.start("visible");
-    }
+    if (servicesInView && scrollingDown) controls.services.start("visible");
   }, [servicesInView, scrollingDown, controls.services]);
 
   useEffect(() => {
-    if (contactInView && scrollingDown) {
-      controls.contact.start("visible");
-    }
+    if (contactInView && scrollingDown) controls.contact.start("visible");
   }, [contactInView, scrollingDown, controls.contact]);
 
   useEffect(() => {
-    if (testimonialsInView && scrollingDown) {
+    if (testimonialsInView && scrollingDown)
       controls.testimonials.start("visible");
-    }
   }, [testimonialsInView, scrollingDown, controls.testimonials]);
 
   return (
@@ -225,10 +215,10 @@ const CompanyInfo = () => {
                 variants={itemVariants}
               >
                 <achievement.icon className="w-8 h-8 mx-auto mb-4 text-green-100" />
-                <motion.h3 className="text-2xl font-bold mb-2">
+                <motion.h3 className="text-sm sm:text-xl font-bold mb-2">
                   {achievementsInView &&
                   scrollingDown &&
-                  achievement.value !== "24/7" ? (
+                  typeof achievement.value === "number" ? (
                     <CountUp
                       start={0}
                       end={achievement.value}
@@ -251,7 +241,7 @@ const CompanyInfo = () => {
           <motion.div
             ref={aboutRef}
             id="about"
-            className="backdrop-blur-lg rounded-3xl bg-[#22C55E] p-8 md:p-12 mb-16 border border-white/20 shadow-xl"
+            className="backdrop-blur-lg rounded-3xl bg-[#22C55E] p-4 md:p-12 mb-16 border border-white/20 shadow-xl"
             variants={containerVariants}
             initial="hidden"
             animate={controls.about}
@@ -260,46 +250,14 @@ const CompanyInfo = () => {
               {t("about")}
             </h2>
             <p className="text-green-100 text-lg leading-relaxed text-justify">
-              <span className="font-bold">{t("leader")} </span>
+              <span className="font-bold uppercase">{t("leader")} </span>
               {t("about_text")}
             </p>
           </motion.div>
-
-          <motion.div
-            ref={servicesRef}
-            id="services"
-            className="mb-16 bg-[#22C55E]"
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls.services}
-          >
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              {t("tour_package_title")}
-            </h2>
-            <div className="grid grid-cols-1 custom:grid-cols-2 services:grid-cols-3 gap-6">
-              {tourPackageIncludes.map((service, index) => (
-                <motion.div
-                  key={index}
-                  className="backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20 text-red shadow-lg"
-                  variants={itemVariants}
-                  whileHover={{
-                    scale: 1.1,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  <service.icon className="w-10 h-10 mx-auto mb-4 text-white" />
-                  <p className="text-white font-medium text-justify">
-                    {service.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           <motion.div
             ref={contactRef}
             id="contact"
-            className="bg-white/10 bg-[#22C55E] backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-16 border border-white/20 shadow-xl"
+            className="bg-white/10 bg-[#22C55E] backdrop-blur-lg rounded-3xl p-4 md:p-12 mb-16 border border-white/20 shadow-xl"
             variants={containerVariants}
             initial="hidden"
             animate={controls.contact}
@@ -320,7 +278,7 @@ const CompanyInfo = () => {
                 </motion.a>
                 <div className="text-center space-y-2">
                   <div className="flex items-center justify-center gap-2 text-green-100">
-                    <FaMapMarkerAlt className="text-green-100 flex-shrink-0" />
+                    <FaMapMarkerAlt className="text-green-100 h-5 w-5 flex-shrink-0" />
                     <p>{t("address")}</p>
                   </div>
                 </div>
@@ -360,6 +318,37 @@ const CompanyInfo = () => {
             </div>
           </motion.div>
 
+          <motion.div
+            ref={servicesRef}
+            id="services"
+            className="mb-16 bg-[#22C55E]"
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls.services}
+          >
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">
+              {t("tour_package_title")}
+            </h2>
+            <div className="grid grid-cols-1 custom:grid-cols-2 services:grid-cols-3 gap-6">
+              {tourPackageIncludes.map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="backdrop-blur-lg rounded-2xl p-4 text-center border border-white/20 text-red shadow-lg"
+                  variants={itemVariants}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: "rgba(255,255,255,0.2)",
+                  }}
+                >
+                  <service.icon className="w-10 h-10 mx-auto mb-4 text-white" />
+                  <p className="text-white font-medium text-justify">
+                    {service.text}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
           {testimonials.length > 0 && (
             <motion.div
               ref={testimonialsRef}
@@ -367,7 +356,7 @@ const CompanyInfo = () => {
               initial="hidden"
               animate={controls.testimonials}
             >
-              <div className="bg-white/10 bg-[#22C55E] backdrop-blur-lg rounded-3xl p-8 md:p-12 text-center border border-white/20 shadow-xl">
+              <div className="bg-white/10 bg-[#22C55E] backdrop-blur-lg rounded-3xl p-4 md:p-12 text-center border border-white/20 shadow-xl">
                 <FaQuoteLeft className="w-8 h-8 mx-auto mb-6 text-green-200" />
                 <motion.div
                   key={currentTestimonial}

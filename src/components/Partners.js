@@ -3,10 +3,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useTranslation } from "react-i18next";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const partnerImages = [
   "https://static.tildacdn.com/tild3065-3431-4465-b165-326430373066/air-kazakhstan-25048.svg",
@@ -23,48 +23,87 @@ const partnerImages = [
 
 const Partners = () => {
   const { t } = useTranslation();
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const slideVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div className="my-5">
-      <div className="px-4">
-        <h2 className="text-3xl font-bold text-white text-center mb-8">
-          {t("partner")}
-        </h2>
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={20}
-          navigation
-          loop={true}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: { slidesPerView: 2 },
-            470: { slidesPerView: 3 },
-            641: { slidesPerView: 4 },
-            1025: { slidesPerView: 4 },
-            1281: { slidesPerView: 5 },
-          }}
-          className="mySwiper"
-        >
-          {partnerImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex justify-center rounded-lg items-center">
-                <img
-                  src={image}
-                  alt={`Partner ${index + 1}`}
-                  className="w-full h-[130px] object-cover rounded-lg"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
+    <motion.div
+      className="my-10 px-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <h2 className="text-4xl font-bold text-white text-center mb-10 drop-shadow-lg">
+        {t("partner")}
+      </h2>
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={25}
+        loop={true}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+          renderBullet: (index, className) => {
+            return `<span class="${className} bg-white"></span>`;
+          },
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          0: { slidesPerView: 2.3 },
+          470: { slidesPerView: 3.5 },
+          641: { slidesPerView: 4.5 },
+          1025: { slidesPerView: 5.5 },
+          1281: { slidesPerView: 6.5 },
+        }}
+        className="mySwiper relative"
+      >
+        {partnerImages.map((image, index) => (
+          <SwiperSlide key={index}>
+            <motion.div
+              className="flex justify-center items-center bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={slideVariants}
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img
+                src={image}
+                alt={`Partner ${index + 1}`}
+                className="w-full h-[100px] object-cover rounded-lg"
+              />
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <style jsx>{`
+        .swiper-pagination-bullet {
+          background: white !important;
+          opacity: 0.7;
+          width: 10px;
+          height: 10px;
+          margin: 0 5px !important;
+        }
+        .swiper-pagination-bullet-active {
+          opacity: 1;
+          background: #22c55e !important;
+        }
+      `}</style>
+    </motion.div>
   );
 };
 
