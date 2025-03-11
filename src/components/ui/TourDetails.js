@@ -139,8 +139,8 @@ const TourDetails = ({ id, onClose }) => {
   };
 
   return (
-    <section className="min-h-screen pt-[100px] px-5 pb-7 bg-gradient-to-br from-green-100 via-white to-green-50 ">
-      <div className="max-w-5xl mx-auto">
+    <section className="min-h-screen  pt-[100px] px-5 pb-7 bg-gradient-to-br from-green-100 via-white to-green-50 ">
+      <div className="max-w-[1920px] mx-auto">
         <div className="relative w-full h-[30vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:shadow-3xl">
           <img
             src={slide.image}
