@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
     <html lang={lang}>
       <head>
         <title>{titles[lang]}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={descriptions[lang]} />
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={descriptions[lang]} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://faxr-travel.uz" />
-        <meta property="og:image" content="/2.jpg" />
+        <meta property="og:image" content="/favicon.png" />
         <meta
           property="og:locale"
           content={lang === "uz" ? "uz_UZ" : lang === "ru" ? "ru_RU" : "en_US"}
@@ -81,10 +81,11 @@ export default function RootLayout({ children }) {
             description: descriptions[lang],
             url: "https://faxr-travel.uz",
             address: {
-              "@type":
-                "Toshkent shahri, Yakkasaroy tumani Yakkasaroy MFY, Bog'ibo'ston ko'chasi, 147-uy",
-              addressCountry: "UZ",
+              "@type": "PostalAddress",
+              streetAddress: "Bog'ibo'ston ko'chasi, 147-uy",
+              addressLocality: "Toshkent shahri",
               addressRegion: "Toshkent",
+              addressCountry: "UZ",
             },
             contactPoint: {
               "@type": "ContactPoint",
