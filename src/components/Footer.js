@@ -37,7 +37,7 @@ export default function Footer() {
           >
             <Link
               href="/"
-              className="block transition-opacity flex items-center justify-center hover:opacity-80"
+              className="transition-opacity flex items-center justify-center hover:opacity-80"
             >
               <Image
                 src="/logo.png"
