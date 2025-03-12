@@ -9,7 +9,9 @@ import { useState, useEffect } from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -29,15 +31,15 @@ export default function RootLayout({ children }) {
   }, [i18n]);
 
   const titles = {
-    uz: "Faxr Travel - Sayohat Agentligi | Xalqaro Turlar",
-    ru: "Faxr Travel - Туристическое агентство | Международные туры",
-    en: "Faxr Travel - Travel Agency | International Tours",
+    uz: "Faxr Travel - Eng yaxshi sayohat agentligi | Xalqaro turlar va arzon narxlar",
+    ru: "Faxr Travel - Туристическое агентство №1 | Международные туры по низким ценам",
+    en: "Faxr Travel - Top Travel Agency | Best International Tours & Deals",
   };
 
   const descriptions = {
-    uz: "Faxr Travel - O‘zbekistondagi eng yaxshi sayohat agentligi. Turkiya, Dubay, Misr va boshqa xalqaro turlarni arzon narxlarda kashf eting.",
-    ru: "Faxr Travel - Лучшее туристическое агентство в Узбекистане. Туры в Турцию, Дубай, Египет и другие страны по доступным ценам.",
-    en: "Faxr Travel - The best travel agency in Uzbekistan. Discover affordable international tours to Turkey, Dubai, Egypt, and more.",
+    uz: "Faxr Travel – Xalqaro sayohatlar va arzon turlar! Dubay, Turkiya, Misr, va boshqa mashhur yo‘nalishlar bo‘yicha eng yaxshi narxlarni toping.",
+    ru: "Faxr Travel – Международные туры по лучшим ценам! Откройте для себя Турцию, Дубай, Египет и другие популярные направления.",
+    en: "Faxr Travel – Discover the best international tours! Explore Dubai, Turkey, Egypt, and more at unbeatable prices.",
   };
 
   const keywords = {
@@ -61,8 +63,12 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content={titles[lang]} />
         <meta property="og:description" content={descriptions[lang]} />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Faxr Travel" />
         <meta property="og:url" content="https://faxr-travel.uz" />
-        <meta property="og:image" content="/favicon.png" />
+        <meta
+          property="og:image"
+          content="https://faxr-travel.uz/favicon.png"
+        />
         <meta
           property="og:locale"
           content={lang === "uz" ? "uz_UZ" : lang === "ru" ? "ru_RU" : "en_US"}
@@ -80,10 +86,11 @@ export default function RootLayout({ children }) {
             name: "Faxr Travel",
             description: descriptions[lang],
             url: "https://faxr-travel.uz",
+            image: "https://faxr-travel.uz/favicon.png",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Bog'ibo'ston ko'chasi, 147-uy",
-              addressLocality: "Toshkent shahri",
+              addressLocality: "Toshkent",
               addressRegion: "Toshkent",
               addressCountry: "UZ",
             },
@@ -92,6 +99,7 @@ export default function RootLayout({ children }) {
               telephone: "+998-95-312-02-02",
               contactType: "Customer Service",
             },
+            openingHours: "Mo-Fr 09:00-18:00",
           })}
         </script>
       </head>

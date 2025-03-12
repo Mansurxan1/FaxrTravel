@@ -158,6 +158,7 @@ export default function Footer() {
                 className="hover:opacity-80 transition-opacity duration-300"
               >
                 <FaEnvelope className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                <span className="sr-only">Email</span>
               </a>
             </div>
           </motion.div>

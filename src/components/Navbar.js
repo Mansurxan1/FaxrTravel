@@ -109,6 +109,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={toggleDropdown}
+                aria-label="Open menu"
                 className="flex items-center bg-white text-green-500 text-sm rounded-md border border-green-500 px-2 md:px-4 py-1 md:py-2 transition duration-150 ease-in-out hover:bg-green-50"
               >
                 {lang.toUpperCase()}

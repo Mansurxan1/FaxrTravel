@@ -177,11 +177,12 @@ const CompanyInfo = () => {
             variants={containerVariants}
             initial="hidden"
             animate={controls.header}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <motion.div
               className="flex justify-center items-center mb-8"
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 100 }}
             >
               <div className="w-32 h-32 p-1 bg-gradient-to-r bg-[#22C55E] rounded-full">
                 <div className="border-4 border-white rounded-full overflow-hidden">
@@ -207,6 +208,7 @@ const CompanyInfo = () => {
             variants={containerVariants}
             initial="hidden"
             animate={controls.achievements}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {achievements.map((achievement, index) => (
               <motion.div
@@ -333,6 +335,7 @@ const CompanyInfo = () => {
                 rel="noopener noreferrer"
                 className="text-white transition"
                 whileHover={{ scale: 1.2, rotate: 10, color: "#fff" }}
+                aria-label="Visit our Instagram page"
               >
                 <FaInstagram />
               </motion.a>
@@ -342,6 +345,7 @@ const CompanyInfo = () => {
                 rel="noopener noreferrer"
                 className="text-white transition"
                 whileHover={{ scale: 1.2, rotate: -10, color: "#fff" }}
+                aria-label="Visit our Telegram channel"
               >
                 <FaTelegram />
               </motion.a>
@@ -349,6 +353,7 @@ const CompanyInfo = () => {
                 href="mailto:abdulaziiizzz7@gmail.com"
                 className="text-white transition"
                 whileHover={{ scale: 1.2, color: "#fff" }}
+                aria-label="Send us an email"
               >
                 <FaEnvelope />
               </motion.a>

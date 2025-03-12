@@ -68,10 +68,10 @@ const Banner = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 z-10" />
               <img
-                src={slide.image || "/placeholder.svg"}
+                src={slide.image}
                 alt={title}
                 className="absolute top-0 left-0 w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
               />
               <div className="relative z-20 px-6 md:px-12 lg:px-24 flex flex-col justify-center h-full max-w-4xl">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
