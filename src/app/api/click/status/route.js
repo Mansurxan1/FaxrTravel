@@ -39,7 +39,7 @@ export async function GET(request) {
     const sign = crypto.createHash('md5').update(signString).digest('hex');
     
     // Формируем тестовый URL для платежа
-    const testPaymentUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=1000&transaction_param=${testOrderId}&return_url=${encodeURIComponent('https://example.com')}&card_type=uzcard&sign_time=${signTime}&sign_string=${sign}`;
+    const testPaymentUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=1000&transaction_param=${testOrderId}&return_url=${encodeURIComponent('https://example.com')}&sign_time=${signTime}&sign_string=${sign}`;
     
     // Проверяем статус фискализации, если настроены переменные
     let fiscalizationStatus = null;

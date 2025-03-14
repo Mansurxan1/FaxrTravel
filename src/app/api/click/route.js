@@ -162,7 +162,7 @@ export async function POST(request) {
     await sendTelegramNotification(orderData);
     
     // Формируем URL для перенаправления на страницу оплаты Click
-    const clickUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=${formattedPrice}&transaction_param=${orderId}&return_url=${encodeURIComponent(absoluteReturnUrl)}&card_type=uzcard&sign_time=${signTime}&sign_string=${sign}`;
+    const clickUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=${formattedPrice}&transaction_param=${orderId}&return_url=${encodeURIComponent(absoluteReturnUrl)}&sign_time=${signTime}&sign_string=${sign}`;
     
     // Логируем URL для отладки
     console.log('Click payment URL:', clickUrl);

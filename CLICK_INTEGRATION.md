@@ -426,7 +426,7 @@ curl -X POST http://localhost:5174/api/click \
 ```json
 {
   "success": true,
-  "redirectUrl": "https://my.click.uz/services/pay?service_id=68027&merchant_id=36344&amount=10000&transaction_param=1740759503049&return_url=https%3A%2F%2Fexample.com%2Fpayment%2Fsuccess&card_type=uzcard&sign_time=1740759503049&sign_string=95290cd9ab4fcd8e26f8afd16a73732d",
+  "redirectUrl": "https://my.click.uz/services/pay?service_id=68027&merchant_id=36344&amount=10000&transaction_param=1740759503049&return_url=https%3A%2F%2Fexample.com%2Fpayment%2Fsuccess&sign_time=1740759503049&sign_string=95290cd9ab4fcd8e26f8afd16a73732d",
   "orderId": "1740759503049"
 }
 ```
@@ -818,7 +818,7 @@ curl -X POST http://localhost:5174/api/click \
 ```json
 {
   "success": true,
-  "redirectUrl": "https://my.click.uz/services/pay?service_id=68027&merchant_id=36344&amount=10000&transaction_param=1740759503049&return_url=https%3A%2F%2Fexample.com%2Fpayment%2Fsuccess&card_type=uzcard&sign_time=1740759503049&sign_string=95290cd9ab4fcd8e26f8afd16a73732d",
+  "redirectUrl": "https://my.click.uz/services/pay?service_id=68027&merchant_id=36344&amount=10000&transaction_param=1740759503049&return_url=https%3A%2F%2Fexample.com%2Fpayment%2Fsuccess&sign_time=1740759503049&sign_string=95290cd9ab4fcd8e26f8afd16a73732d",
   "orderId": "1740759503049"
 }
 ```
